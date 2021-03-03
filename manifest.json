@@ -1,25 +1,26 @@
 {
-  "manifest_version": 2,
+    "manifest_version": 2,
+    "name": "Random Password Generator",
+    "version": "1.0.2",
+    "description": "Generate a random password",
+  
+    "browser_action": {
+      "default_icon": "./icons/icon-48.png",
+      "default_popup": "popup.html"
+    },
 
-  "name": "Random Password Generator",
-  "description": "Click this button to copy a ransomized password to your clipboard",
-  "version": "1.0",
+    "icons": {
+		  "48": "./icons/icon-48.png",
+		  "96": "./icons/icon-96.png",
+		  "144": "./icons/icon-144.png"
+	  },
+	
+    "background": {
+      "persistent": true,
+      "scripts": ["background.js"]
+    },
 
-  "icons": {
-    "48": "icon.png"
-  },
-
-  "permissions": [
-    "tabs", "<all_urls>"
-  ],
-
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  },
-
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "permissions": [
+        "clipboardWrite", "tabs", "<all_urls>"
+    ]
   }
-}
