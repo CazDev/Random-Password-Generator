@@ -2,7 +2,7 @@
 
 function work() {
     //Set length of the string
-    const length = 12;
+    const length = 16;
 
     //Set which characters are in the string
     const lower_case = true;
@@ -11,13 +11,13 @@ function work() {
     const symbols = false;
     const noDuplicates = true;
 
-    //increase the likelihood of character group appearing (minimum 1)
+    //Increase the likelihood of character group appearing (minimum 1)
     const lower_case_weighting = 1;
     const upper_case_weighting = 1;
     const number_weighting = 2;
     const symbol_weighting = 1;
     
-    //add characters to character set
+    //Add characters to character set
     var charSet = [];
     for(var i = 0; i < lower_case_weighting && lower_case; i++) {charSet += ['abcdefghijklmnopqrstuvwxyz'];}
     for(var i = 0; i < upper_case_weighting && upper_case; i++) {charSet += ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];}
@@ -38,6 +38,7 @@ function work() {
     copyToClipboard(str);
 };
 
+//Function to copy string to clipboard
 const copyToClipboard = str => {
     const el = document.createElement('textarea');
     el.value = str;
@@ -50,6 +51,7 @@ const copyToClipboard = str => {
     document.body.removeChild(el);
 };
 
+//Function to sleep/delay in miliseconds
 function sleep(milliseconds) {
     const date = Date.now();
     let currentDate = null;
@@ -58,6 +60,5 @@ function sleep(milliseconds) {
     } while (currentDate - date < milliseconds);
 }
 
-
-  
+//Load event for popup.html
 document.getElementsByTagName("body").addEventListener('load', work());
