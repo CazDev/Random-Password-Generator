@@ -1,15 +1,15 @@
-// var app = chrome.runtime.getBackgroundPage();
+//Set which characters are in the string
+var lower_case = true;
+var upper_case = true;
+var numbers = true;
+var symbols = true;
+var noDuplicates = true;
+
+export { lower_case, upper_case, numbers, symbols, noDuplicates }
 
 function work() {
     //Set length of the string
     const length = 16;
-
-    //Set which characters are in the string
-    const lower_case = true;
-    const upper_case = true;
-    const numbers = true;
-    const symbols = false;
-    const noDuplicates = true;
 
     //Increase the likelihood of character group appearing (minimum 1)
     const lower_case_weighting = 1;
@@ -61,4 +61,5 @@ function sleep(milliseconds) {
 }
 
 //Load event for popup.html
-document.getElementsByTagName("body").addEventListener('load', work());
+var body = document.getElementsByTagName("body");
+body[0].addEventListener('load', work());

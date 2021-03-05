@@ -5,6 +5,7 @@
     "description": "Generate a random password",
   
     "browser_action": {
+      "default_title": "Test manifest title",
       "default_icon": "./icons/icon-48.png",
       "default_popup": "popup.html"
     },
@@ -21,6 +22,9 @@
     },
 
     "permissions": [
-        "clipboardWrite", "tabs", "<all_urls>"
+      "clipboardWrite",
+      "tabs",
+      "<all_urls>",
+      "contextMenus"
     ]
   }
